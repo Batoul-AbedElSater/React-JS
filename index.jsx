@@ -1,6 +1,6 @@
 import {createRoot} from 'react-dom/client'
 //1. create a root 
-const root = createRoot(document.getElementById('root'))
+const root = createRoot(document.querySelector('#root'))
 
 //2. render some markup to the root
 root.render(
