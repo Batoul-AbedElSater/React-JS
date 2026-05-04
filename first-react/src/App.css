@@ -5,6 +5,25 @@
   font-size: 16px;
 }
 
+.Header {
+  text-align: left;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.h1 {
+ 
+  color: #d623a0;
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.Footer {
+  text-align: left;
+  margin-top: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .Ol {
   list-style-type: decimal;
   text-align: left;
