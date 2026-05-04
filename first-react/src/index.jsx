@@ -3,14 +3,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
-import index from './index.jsx'
 
-function App() {
-  const name = "Batoul Abed El Sater"; // You can use variables!
+function index() {
+  const name = "Batoul"; // You can use variables!
 
   return (
     <div className='app'>
-      <index /> {/* This will render the content from index.jsx */    }
       <h1 className='h1'>{name}'s Learning Page</h1>
       <p>I am currently practicing:</p>
       <ul>
@@ -25,4 +23,4 @@ function App() {
   );
 }
 
-export default App;
+export default index;
