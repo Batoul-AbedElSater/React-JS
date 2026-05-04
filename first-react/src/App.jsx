@@ -10,9 +10,17 @@ import { Fragment } from 'react'
 
 function Header(){
   return (
+     
      <header className='Header'>
-          <h1 className='h1'>My React App😎</h1>
-          <img src={heroImg} alt="Hero Image" />
+          <img className='img' src={reactLogo} alt="Hero Image" />
+          <nav className='nav'>
+            <ul className='ul'>
+              <li className='nav-list-item'>Pricing</li>
+              <li className='nav-list-item'>About</li>
+              <li className='nav-list-item'>Contact</li>
+            </ul>
+          </nav>
+
       </header>
 
   )

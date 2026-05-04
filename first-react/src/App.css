@@ -6,14 +6,17 @@
 }
 
 .Header {
-  text-align: left;
+    
   margin-bottom: 20px;
   font-weight: bold;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .h1 {
  
-  color: #c72496;
+  color: #21bace;
   font-weight: bold;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -33,4 +36,40 @@
 .Li {
   font-weight: bold;
   margin-bottom: 1px;
+}
+.Li:hover {
+  color: #28c7c7;
+  cursor: pointer;
+}
+.img {
+  width: 80px;
+  height: auto;
+  margin-top: 20px;
+}
+.img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+.ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+.ul li {
+  font-weight: bold;
+  color: #21bace;
+}
+.ul li:hover {
+  color: #076464;
+  cursor: pointer;
+}
+.nav {
+  margin-top: 40px;
+}
+.nav-list-item {
+  font-weight: bold;
+  color: #21bace;
+  margin-right: 20px;
+  font-size: 1.1rem;
 }
