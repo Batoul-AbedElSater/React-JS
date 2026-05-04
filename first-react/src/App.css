@@ -13,7 +13,7 @@
 }
 .h1 {
  
-  color: #d623a0;
+  color: #c72496;
   font-weight: bold;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -27,7 +27,6 @@
 .Ol {
   list-style-type: decimal;
   text-align: left;
-  margin: 10px auto;
   max-width: 800px;
 }
 
