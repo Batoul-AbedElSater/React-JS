@@ -1,111 +1,134 @@
-:root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+html, body {
+  margin:0;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
+header {
+  background:#F4C9D6;
+  display:flex;
+  justify-content: space-between ;
+  color : white;
+  height:200px;
+  align-items:center;
+  padding: 0 50px;
 
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
+   border: 5px solid #f7f8ae;   
+  border-radius: 10px;                   
+  margin-bottom: 20px;
+
 }
 
-body {
+header > img {
+  width : 150px;
+  height:150px;
+  margin-right: 20px;
+  border-radius : 30%;
+  display: block;
+  border: 7px solid #f7f8ae;
+
+}
+
+header > h1 {
+  font-size : 3rem;
+  font-weight: bold;
+  font-family :Cooper Black;
+  flex: 1;
+  text-align:center;
   margin: 0;
 }
 
-#root {
-  width: 1126px;
-  max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
+.journal-entry {
+  display: flex;
+  align-items: flex-start;
+  margin: 40px auto;             /* space left and right */
+  padding: 20px;
+  max-width: 1200px;             /* keeps card centered with space */
+  border: 3px solid #ff69b4;     /* dark pink border */
+  border-radius: 12px;
+  background: #fff0f6;           /* soft pink background */
+}
+
+.journal-entry .main-image-container {
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 12px;
+  flex-shrink: 0;
+  margin-right: 50px;            /* extra space between photo and info */
+}
+
+.journal-entry .main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.journal-entry .info-maker {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
+  /* justify-content: flex-start;  */ 
+  justify-content: center; 
+  height: 500px; 
+  padding-top:20px;                /* match image height */
+}
+.journal-entry .location {
+  display: flex;              /* puts icon + text side by side */
+  align-items: center;        /* vertical alignment */
+  margin-bottom: 10px;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
+/* Location icon + country side by side */
+.journal-entry .marker {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+  
 }
 
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
-  margin: 0;
+.journal-entry .country {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #333;
+  
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+/* Google Maps link */
+.journal-entry a {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #c2185b;                /* dark pink */
+  text-decoration: none;
+  margin-top: 8px;
 }
 
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+.journal-entry a:hover {
+  text-decoration: underline;
+}
+
+/* Sweet name */
+.journal-entry .entry-title {
+  font-size: 3rem;
+  margin: 20px 0;
+  font-family: "Calibri Black", sans-serif;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Dates */
+.journal-entry .trip-dates {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+/* Description paragraph */
+.journal-entry .entry-text {
+  font-size: 1.3rem;
+  font-weight: bold;
+  line-height: 1.6;
+  color: #000;
 }
