@@ -1,0 +1,118 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 10px;
+    font-famiy: Inter, sans-serif;
+    background: #ffffff;
+    color:black;
+
+}
+nav {
+    display: flex;
+    align-items: center;
+    font-family: var(--heading);
+    font-weight: 500;
+    color: var(--text-h);
+    gap: 8px;
+    padding: 0 16px;
+}
+
+nav > img {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    margin-right: 8px;
+    
+
+}
+nav > img:hover {
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.3s;
+    transform: scale(1.05);
+    transition: transform 0.3s;
+   
+}
+
+header {
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    margin-bottom: 32px;
+    background: #cda2cf;
+
+    @media (max-width: 1024px) {
+        margin-bottom: 20px;
+    }
+    
+    top: 0;
+}
+
+nav > span {
+    color:black;
+    font-size: 1.4rem !important;
+    line-height: 135%;
+    margin-top: 8px;
+    display: block;
+    @media (max-width: 1024px) {
+        font-size: 12px;
+        margin-top: 4px;
+    }
+    font-family: Cooper Black, cursive;
+    font-weight: 700;
+
+  
+
+}
+nav > span:hover {
+    color: #350244;
+    transition: color 0.3s;
+}
+
+main {
+padding: 20px 30px;
+background-image:url('./assets/bt.jpeg');
+background-repeat: no-repeat;
+background-position: right 40%;
+
+}
+
+
+main > h1 {
+    font-size: 2.5rem;
+    line-height: 135%;
+    margin-bottom: 16px;
+    color: black;
+    font-family: Cooper Black, cursive;
+    font-weight: 700;
+}
+main > p {
+    font-size: 1.2rem;
+    line-height: 135%;
+    margin-bottom: 16px;
+     color: black;
+    font-family: Cooper Black, cursive;
+}
+main > ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 16px;
+    padding-top: 30px;
+}
+main > ul > li {
+    
+   margin-left: 10px;
+   padding: 4px 0;
+    margin-bottom: 8px;
+    text-align: left;
+    color: black;
+    font-family: Cooper Black, cursive;
+}
+main > ul > li::marker {
+    color:black ;
+    font-size: 1.5rem;
+    type: disc;
+
+
+}
