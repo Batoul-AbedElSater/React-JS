@@ -1,13 +1,16 @@
-import Header from "./Components/Header"
-import Entry from "./Components/Entry"
+import Contact from "./Contact"
 
-export default function App(){
+function App(){
   return (
-    <>
-      <Header />
-      <Entry/>
-      
-    </>
+    <div className="contacts">
+        <Contact />
+        <Contact />
+        <Contact />
+        <Contact />
+        
+    </div>
     
   )
 }
+
+export default App
