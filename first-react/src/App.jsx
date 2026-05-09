@@ -1,8 +1,22 @@
 import Joke from './Joke'
-function App(){
+import jokesData from './jokesData'
+
+ export default function App(){
+  const jokeElements = jokesData.map((joke) =>{
+      return <Joke Setup={joke.Setup} PunchLine={joke.PunchLine}/>
+  })
   return (
    <main>
-      <Joke 
+       {jokeElements}
+   </main>
+    
+  )
+}
+
+
+
+
+{/* <Joke 
       // Setup="I told my wife she was drawing her eyebrows too high." 
       PunchLine = "She looked surprised."
       />
@@ -21,11 +35,4 @@ function App(){
       <Joke  
       Setup="I used to be a baker, but I couldn't make enough dough." 
       PunchLine="Now I'm just bread-less."
-      />
-
-   </main>
-    
-  )
-}
-
-export default App
+      /> */}
