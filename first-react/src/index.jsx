@@ -1,27 +1,25 @@
-//challenges 
+import ReactDOM from 'react-dom/client'
 
-//challenge 1 
-// const nums = [1, 2, 3, 4, 5]
-// const squares =  nums.map(function() {
-//     return num * num 
-// })
-// console.log(squares)
+function App(){
 
+    function handleClick(){
+        console.log("I was clicked!")
+    }
 
-//challenge 2
-// const names = ["alice", "bob", "charlic", "danielle"]
+    function handleMouseOver(){
+        console.log("I was hovered!")
+    }
+    return(
+        <main className='container'>
+           <img 
+                src=''
+                alt=''
+                onMouseOver={handleMouseOver}
+           />
+            <button onClick={handleClick}> Click me </button>
 
-// const cap = names.map(() => {
-//     return  name[0].toUpperCase() + name.slice(1)
-// })
-// console.log(names)
+        </main>
+    )
+}
 
-//challenge 3
-//put p tag arround the names inside the array
-// const men = ["Bob", "Charl", "Jad"]
-
-// const para = y.map( man =>{
-//     return `<p>${man}</p>`
-// })
-
-
+ReactDOM.createRoot(document.getElementById('root')).render(<App />)
