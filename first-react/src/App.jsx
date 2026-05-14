@@ -1,12 +1,15 @@
-import React from "react";
-import Header from "./Header";
-import MainContent from "./MainContent";
-export default function App() {
-  return (
-    <div>
-      <Header />
-      <MainContent />
-      
-    </div>
-  );
+export default function App(){
+
+  const isGoingOut = true
+
+ 
+
+  return(
+    <main>
+       <h1 > Do I feel like going out tonight?</h1>
+       <button>{isGoingOut ? "Yes" : "No"}</button>
+    </main>
+  )
+
+
 }
