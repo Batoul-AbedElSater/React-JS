@@ -2,9 +2,9 @@ import "./MainContent.css";
 import React, { useState } from "react";
 
 export default function MainContent() {
-        const [designs, setDesigns] = useState([
-        { roomType: "Bedroom", style: "Modern", budget: "5000" },
-        { roomType: "Kitchen", style: "Rustic", budget: "3000" }
+        const [designs, setDesigns] = React.useState([
+        // { roomType: "Bedroom", style: "Modern", budget: "5000" },
+        // { roomType: "Kitchen", style: "Rustic", budget: "3000" }
     ]);
 
     const designListItems = designs.map((design, index) => (
