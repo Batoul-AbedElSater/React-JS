@@ -1,25 +1,6 @@
-import ReactDOM from 'react-dom/client'
+import ReactDOM from "react-dom/client";
+import App from "./App"
 
-function App(){
-
-    function handleClick(){
-        console.log("I was clicked!")
-    }
-
-    function handleMouseOver(){
-        console.log("I was hovered!")
-    }
-    return(
-        <main className='container'>
-           <img 
-                src=''
-                alt=''
-                onMouseOver={handleMouseOver}
-           />
-            <button onClick={handleClick}> Click me </button>
-
-        </main>
-    )
-}
-
-ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+ReactDOM
+    .createRoot(document.getElementById('root'))
+    .render(<App />);

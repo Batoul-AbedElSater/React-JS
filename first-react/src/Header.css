@@ -1,103 +1,51 @@
-/* ===== HEADER ===== */
-.designer-header {
-  height: 200px;
+.mini-header {
+  min-height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  position: relative;
 
-  /* YOUR CUSTOM PALETTE */
-  background: linear-gradient(
-    135deg,
-    #F6EEE8 0%,
-    #EFD9D5 40%,
-    #BFC9B3 100%
-  );
-
-  border: 4px solid #c51010;
-
-box-shadow: 0 12px 30px rgba(218, 12, 12, 0.25);}
-
-/* Soft luxury glows */
-.designer-header::before,
-.designer-header::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(90px);
+  background: linear-gradient(135deg, #f6e6f0, #ead0e3);
 }
 
-/* Cream glow */
-.designer-header::before {
-  width: 280px;
-  height: 280px;
-
-  background: rgba(246, 238, 232, 0.8);
-
-  top: -100px;
-  left: -80px;
+.mini-header {
+  display: flex;
+  flex-direction: column;
 }
 
-/* Pink/Brown glow */
-.designer-header::after {
-  width: 320px;
-  height: 320px;
+.mini-header {
+  width: 300px;
+  padding: 10px 15px;
 
-  background: rgba(239, 217, 213, 0.55);
+  background: #813e68;
 
-  bottom: -140px;
-  right: -100px;
-}
+  border-radius: 28px;
 
-/* ===== TITLE ===== */
-.designer-title {
-  position: relative;
-  z-index: 2;
+  box-shadow: 0 10px 30px rgba(129, 62, 104, 0.35);
 
-  font-family: "Playfair Display", serif;
-  font-size: 4.3rem;
-  font-weight: 700;
-
-  color: #c51010;
-
-  letter-spacing: 3px;
   text-align: center;
-
-  text-shadow:
-    0 2px 12px rgba(255,255,255,0.6);
-
-  animation: floatText 3.5s ease-in-out infinite;
 }
 
-/* Elegant underline */
-.designer-title::after {
-  content: "";
-  display: block;
+.mini-avatar {
+  width: 120px;
+  height: 120px;
 
-  width: 950px;
-  height: 5px;
+  border-radius: 50%;
+  object-fit: cover;
 
-  margin: 20px auto 0;
+  border: 5px solid white;
 
-  border-radius: 30px;
+  margin-bottom: 18px;
 
- background: #c50000;
-
-  box-shadow: 0 0 12px rgba(191, 201, 179, 0.5);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
-/* Floating effect */
-@keyframes floatText {
-  0% {
-    transform: translateY(0px);
-  }
+.mini-name {
+  color: white;
 
-  50% {
-    transform: translateY(-10px);
-  }
+  font-size: 28px;
+  font-weight: bold;
 
-  100% {
-    transform: translateY(0px);
-  }
+  letter-spacing: 1px;
+
+  font-family: "Poppins", sans-serif;
 }
