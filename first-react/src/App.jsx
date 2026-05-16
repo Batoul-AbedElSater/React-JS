@@ -1,26 +1,25 @@
- import React from "react";
- import Header from "./Header";
- import Body from "./Body"
-// import MainContent from "./MainContent";
-// export default function App() {
-//   return (
-//     <div>
-//       <Header />
-//       <MainContent />
-      
-//     </div>
-//   );
-// }
+import React from "react";
+import padsData from "./pads";
+import "./App.css";
 
+export default function App() {
+  const [pads, setPads] = React.useState(padsData);
 
-export default function App(){
+  const buttonElements = pads.map(pad => (
+    <button
+      key={pad.id}
+      className="pad"
+      style={{ backgroundColor: pad.color }}
+    >
+      {pad.on ? "ON" : "OFF"}
+    </button>
+  ));
 
-  const [userName] = React.useState("Batoul");
-
-  return(
+  return (
     <main>
-        <Header userName={userName}/>
-        <Body userName={userName}/>
+      <div className="pad-container">
+        {buttonElements}
+      </div>
     </main>
-  )
+  );
 }
