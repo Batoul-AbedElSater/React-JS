@@ -2,74 +2,60 @@ import "./MainContent.css";
 import React, { useState } from "react";
 
 export default function MainContent() {
-        const [designs, setDesigns] = React.useState([
-        // { roomType: "Bedroom", style: "Modern", budget: "5000" },
-        // { roomType: "Kitchen", style: "Rustic", budget: "3000" }
-    ]);
+  const [designs, setDesigns] = useState([]);
 
-    const designListItems = designs.map((design, index) => (
-        <li key={index}>
-        <strong>{design.roomType}</strong> — {design.style} — Budget: ${design.budget}
-        </li>
-    ));
-    
+  function addDesigns(event) {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
 
+    const newDesign = {
+      roomType: formData.get("RoomType"),
+      style: formData.get("StylePreference"),
+      budget: formData.get("Budget"),
+    };
 
-     function addDesigns(formData){ //receive form data 
-          const newDesign = {
-            roomType: formData.get("RoomType"),
-            style: formData.get("StylePreference"),
-            budget: formData.get("Budget")
-             };
-
-           setDesigns(prev => [...prev, newDesign]);
-
-     }
+    // Replace previous design with the new one 
+    setDesigns([newDesign]);
+  }
 
   return (
-     <main>  
-            <form action={addDesigns} className="add-info-form">
-            <h1 className="form-heading">🏠 Add Room Type</h1>
-            <input
-                
-                type="text"
-                placeholder="e.g. Bedroom"
-                aria-label="Add Room Type"
-                name="RoomType"
-                defaultValue="BedRoom"
-                required
-            />
+    <main>
+      {/* Form */}
+      <form onSubmit={addDesigns} className="add-info-form">
+        <h1 className="form-heading">🏠 Add Room Type</h1>
+        <input type="text" name="RoomType" placeholder="e.g. Bedroom" required />
 
-            <h1 className="form-heading">🎨 Add Style Preference</h1>
-            <input
-                
-                type="text"
-                placeholder="e.g. Modern, Rustic, Minimalist"
-                aria-label="Add Style Preference"
-                name="StylePreference"
-                defaultValue="Modern"
-                required
-            />
+        <h1 className="form-heading">🎨 Add Style Preference</h1>
+        <input type="text" name="StylePreference" placeholder="e.g. Modern" required />
 
-            <h1 className="form-heading">💰 Add Budget</h1>
-            <input
-                
-                type="number"
-                placeholder="e.g. 5000$"
-                aria-label="Add Budget"
-                name="Budget"
-                defaultValue="5000"
-                required
-            />
+        <h1 className="form-heading">💰 Add Budget</h1>
+        <input type="number" name="Budget" placeholder="e.g. 5000$" required />
 
-            <button type="submit" className="submit-btn">
-                Submit Design Preferences
-            </button>
-            </form>
-       <ul>
-            {designListItems}
-       </ul>
-   </main>
-   
+        <button type="submit" className="submit-btn">Submit Design Preferences</button>
+      </form>
+
+      {/* Show Design Section only if we have one */}
+      {designs.length > 0 && (
+        <section className="design-section">
+          <h2 className="section-heading">🏡 Your Design Preferences</h2>
+          <div className="design-card">
+            <h3 className="room-type">🏠 {designs[0].roomType}</h3>
+            <p className="style">🎨 Style: {designs[0].style}</p>
+            <p className="budget">💰 Budget: ${designs[0].budget}</p>
+          </div>
+        </section>
+      )}
+
+      {/* AI Section appears only if we have one design */}
+      {designs.length > 0 && (
+        <section className="ai-section">
+          <h3 className="ai-heading">✨ Ready for Inspiration?</h3>
+          <p className="ai-text">
+            Send your preferences to the AI and get a tailored interior design idea.
+          </p>
+          <button className="ai-btn">🚀 Generate Design Idea</button>
+        </section>
+      )}
+    </main>
   );
 }
