@@ -165,3 +165,42 @@
   transform: translateY(-3px);
   box-shadow: 0 0 25px rgba(255,255,255,0.8);
 }
+
+.claude-design-section {
+  max-width: 780px;
+  margin: 50px auto;
+  padding: 50px;
+  background: linear-gradient(160deg, #fffdf9, #fff4e6);
+  border-radius: 24px;
+  border: 1px solid #e8d5bc;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.09);
+}
+
+.claude-design-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #2c3e50;
+  margin-bottom: 35px;
+  padding-bottom: 18px;
+  border-bottom: 2px solid #e8d5bc;
+  letter-spacing: 0.5px;
+}
+
+.claude-section-header {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #b5541e;
+  margin-top: 35px;
+  margin-bottom: 12px;
+  letter-spacing: 0.3px;
+}
+
+.claude-section-text {
+  font-size: 1.08rem;
+  color: #3a3a3a;
+  line-height: 2;
+  margin-bottom: 8px;
+  padding-left: 16px;
+  border-left: 4px solid #f0c99a;
+}
