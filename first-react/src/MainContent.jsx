@@ -2,15 +2,22 @@ import "./MainContent.css";
 import React, { useState } from "react";
 import DesignList from "./Components/DesignList";
 import ClaudeDesign from "./Components/ClaudeDesign";
+import { getDesignFromMistral } from "./ai";
 
 
 export default function MainContent() {
   const [designs, setDesigns] = useState([]);
-  const[designShown, setDesignShown] = useState(false)
+  const[design, setDesign] = useState("")
 
-  function toggleDesignShown(){
-    setDesignShown(prevShown => !prevShown)
-  }
+
+const [loading, setLoading] = useState(false)
+
+async function getDesign() {
+  setLoading(true)
+  const generatedDesign = await getDesignFromMistral(designs)
+  setDesign(generatedDesign)
+  setLoading(false)
+}
 
   function addDesigns(event) {
     event.preventDefault();
@@ -53,12 +60,14 @@ export default function MainContent() {
           <p className="ai-text">
             Send your preferences to the AI and get a tailored interior design idea.
           </p>
-          <button className="ai-btn" onClick={toggleDesignShown}>🚀 Generate Design Idea</button>
+           <button className="ai-btn" onClick={getDesign} disabled={loading}>
+          {loading ? "⏳ Generating..." : "🚀 Generate Design Idea"}
+        </button>
         </section>
       )}
 
 
-     {designShown && <ClaudeDesign />}
+     {design && <ClaudeDesign  design={design}/>}
 
 
     </main>
